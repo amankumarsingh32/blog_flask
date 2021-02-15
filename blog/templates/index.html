@@ -1,0 +1,62 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<!-- Page Header -->
+<header class="masthead" style="background-image: url(' {{ url_for('static', filename='img/home-bg.jpg') }}  ')">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="site-heading">
+                    <h1>{{ params["blog_name"] }}</h1>
+                    <span class="subheading">{{ params["blog_name"] }} - A Blog for Electronics & IoT Community.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+
+            <!--   TODO : Fetch the data from database and display using for loop      -->
+            {% if posts %}
+            {% for post in posts %}
+            <div class="post-preview">
+                <a href="post.html">
+                    <h2 class="post-title">
+                        <a href="/post/{{post.slug}}">{{post.title}}</a>
+                    </h2>
+                    <h5 class="post-subtitle">
+                        {{post.content[0:60]}}...
+                    </h5>
+                </a>
+                <p class="post-meta">Posted by
+                    <a href="#">{{post.posted_by}}</a>
+                    on {{post.date.strftime('%d-%m-%Y')}}</p>
+            </div>
+            <hr>
+            {% endfor %}
+
+
+            <!-- Pager -->
+            <div class="clearfix">
+                <a class="btn btn-primary float-left" href="{{prev}}">&larr; Previous</a>
+                <a class="btn btn-primary float-right" href="{{next}}">Next &rarr;</a>
+            </div>
+
+            {% else %}
+            <div class="alert alert-danger" style="text-align:center;" role="alert">
+                <h1>No Posts</h1>
+            </div>
+
+            {% endif %}
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

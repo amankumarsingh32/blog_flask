@@ -1,0 +1,20 @@
+{
+  "params":
+  {
+    "local_server": true,
+    "local_uri": "mysql+mysqlconnector://root:aman1234#@localhost/e-IONICS",
+    "prod_uri": "mysql+mysqlconnector://root:aman1234#@localhost/e-IONICS",
+    "fb_url": "https:facebook.com/e-IONICS",
+    "tw_url": "https:twitter.com/e-IONICS",
+    "gh_url": "https:github.com/e-IONICS",
+    "blog_name": "e-IONICS",
+    "mail_username": "kumar.aman96@gmail.com",
+    "mail_password": "Aman@121403#",
+    "admin_username": "aman@email.com",
+    "admin_password": "aman1234#",
+    "login_error_msg": "Invalid Credentials! Please check username and password.",
+    "upload_location": "/static/upload",
+    "no_of_posts" : 3
+
+  }
+}

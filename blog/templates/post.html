@@ -1,0 +1,69 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<!-- Page Header -->
+
+{% set fname='upload/' + post.img_file %}
+
+<header class="masthead" style="background-image: url('{{ url_for('static', filename=fname) }}')">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="post-heading">
+                    <h1>{{ post.title }}</h1>
+                    <h2 class="subheading">{{ post.subheading }}</h2>
+                    <span class="meta">Posted by
+              <a href="{{ params['gh_url'] }}">{{ post.posted_by }}</a>
+              on {{post.date.strftime('%d-%m-%Y')}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <p>{{post.content}}</p>
+
+                <!--                Blog post section sub article-->
+                <!--
+                <h2 class="section-heading"></h2>
+
+                <p></p>
+
+                <p></p>
+                -->
+                <!--            <blockquote> tag is used to make a paragraph italic anf highlighted    -->
+                <!--
+                <blockquote class="blockquote">
+                </blockquote>
+                -->
+
+                <!--                Blog post section sub article-->
+                <!--
+                <h2 class="section-heading"></h2>
+
+                <p></p>
+                -->
+
+
+                <!--                <a> tag contains image to show in blog post and <span> tag is used to display small texts after image as image description-->
+                <!--
+                                <a href="#">
+                                    <img class="img-fluid" src="{{ url_for('static', filename='img/post-sample-image.jpg') }}" alt="">
+                                </a>
+                                <span class="caption text-muted"></span>
+                -->
+
+            </div>
+        </div>
+    </div>
+</article>
+
+
+{% endblock %}
